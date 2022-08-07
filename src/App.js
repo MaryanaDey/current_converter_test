@@ -1,8 +1,8 @@
 import './App.css';
-import CurrencyInput from "./CurrentInput";
+import CurrencyInput from "./CurrencyInput";
 import { useState, useEffect } from "react";
 import axios from "axios";
-//wpu7YYzWjRWbxRIUi0OoaC7Q0vezwEny
+
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
   const [rates, setRates] = useState([]);
 
   useEffect(() => {
-    axios.get('https://api.apilayer.com/fixer/latest?base=USD&symbols=EUR,GBP&apikey=wpu7YYzWjRWbxRIUi0OoaC7Q0vezwEny')
+    axios.get('https://cdn.cur.su/api/latest.json')
       .then(response => {
         setRates(response.data.rates);
       })
@@ -56,23 +56,29 @@ function App() {
 
 
   return (
-    <div>
-      <h1>Currency Converter</h1>
-      <CurrencyInput
-        onAmountChange={handleAmount1Change}
-        onCurrencyChange={handleCurrency1Change}
-        currencies={Object.keys(rates)}
-        amount={amount1}
-        currency={currency1} />
+    <div class="container">
 
-      <CurrencyInput
-        onAmountChange={handleAmount2Change}
-        onCurrencyChange={handleCurrency2Change}
-        currencies={Object.keys(rates)}
-        amount={amount2}
-        currency={currency2} />
+
+      <h1>Currency Converter</h1>
+      <div class="box">
+        <CurrencyInput
+          onAmountChange={handleAmount1Change}
+          onCurrencyChange={handleCurrency1Change}
+          currencies={Object.keys(rates)}
+          amount={amount1}
+          currency={currency1} />
+
+        <CurrencyInput
+          onAmountChange={handleAmount2Change}
+          onCurrencyChange={handleCurrency2Change}
+          currencies={Object.keys(rates)}
+          amount={amount2}
+          currency={currency2} />
+
+      </div>
     </div>
   );
 }
 
 export default App;
+

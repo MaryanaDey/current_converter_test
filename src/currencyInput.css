@@ -1,0 +1,51 @@
+.group {
+    background: #335;
+    width: 180px;
+    margin: 0 auto 20px;
+    display: grid;
+    grid-template-columns: 100px 80px;
+    border-radius: 15px;
+}
+
+input,
+select {
+    background: none;
+    border: 0;
+    color: #fff;
+}
+
+input {
+    padding-left: 10px;
+}
+
+select {
+    padding: 15px;
+    background-color: #335;
+}
+
+h1 {
+    color: #335;
+    margin-left: 72px;
+    margin-bottom: 0.5em;
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(315deg, #0066FF, #00FFCC);
+    height: 100hv;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: white;
+    padding: 10px 24px;
+    border-radius: 20px;
+    width: 490px;
+}
+
+.container .box {
+    width: 100%;
+    display: flex;
+}
